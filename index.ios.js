@@ -7,31 +7,69 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
+  TabBarIOS,
   StyleSheet,
   Text,
   View
 } from 'react-native';
 
+/*
+'use strict';
+
+var React = require('react-native');
+*/
+var FeaturedTab = require('./FeaturedTab.js');
+var SearchTab = require('./SearchTab.js');
+
+/*
+var {
+  AppRegistry,
+  StyleSheet,
+  Text,
+  View,
+  TabBarIOS
+} = React;
+*/
+
 export default class ReactNativeSample extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+        selectedTab: 'FeaturedTab'
+      };
+    }
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <TabBarIOS selectedTab={this.state.selectedTab}>
+        <TabBarIOS.Item
+          selected={this.state.selectedTab === 'FeaturedTab'}
+          systemIcon='featured'
+          onPress={() => {
+            this.setState(
+              {selectedTab: 'FeaturedTab'}
+            );
+          }}
+        >
+          <FeaturedTab />
+        </TabBarIOS.Item>
+        <TabBarIOS.Item
+          selected={this.state.selectedTab === 'SearchTab'}
+          systemIcon='search'
+          onPress={() => {
+            this.setState(
+              {selectedTab: 'SearchTab'}
+            );
+          }}
+        >
+          <SearchTab />
+        </TabBarIOS.Item>
+      </TabBarIOS>
     );
   }
-}
+};
 
-const styles = StyleSheet.create({
+var styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
