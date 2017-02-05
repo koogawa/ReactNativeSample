@@ -5,21 +5,7 @@ import {
   View
 } from 'react-native';
 
-/*
-'use strict';
-
-var React = require('react-native');
-
-var {
-  StyleSheet,
-  Text,
-  View,
-} = React;
-*/
-
 export default class SearchTab extends Component {
-
-// var SearchTab = React.createClass({
   render() {
     return (
       <View style={styles.container}>

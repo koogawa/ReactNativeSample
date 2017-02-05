@@ -5,22 +5,7 @@ import {
   View
 } from 'react-native';
 
-
-/*
-'use strict';
-
-var React = require('react-native');
-
-var {
-  StyleSheet,
-  Text,
-  View,
-} = React;
-*/
-
 export default class FeaturedTab extends Component {
-
-// var FeaturedTab = React.createClass({
   render() {
     return (
       <View style={styles.container}>

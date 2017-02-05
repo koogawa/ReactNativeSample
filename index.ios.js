@@ -13,23 +13,8 @@ import {
   View
 } from 'react-native';
 
-/*
-'use strict';
-
-var React = require('react-native');
-*/
 var FeaturedTab = require('./FeaturedTab.js');
 var SearchTab = require('./SearchTab.js');
-
-/*
-var {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  TabBarIOS
-} = React;
-*/
 
 export default class ReactNativeSample extends Component {
   constructor(props) {
